@@ -69,7 +69,7 @@ export default function Contact() {
           <span style={{ width: '28px', height: '1px', background: 'var(--c-gold)' }}></span>
           06 · GET IN TOUCH
         </div>
-        <h2 className="section-title" style={{ fontSize: 'clamp(28px, 3.2vw, 42px)', marginBottom: '20px', lineHeight: '1.1' }}>
+        <h2 className="section-title" style={{ fontSize: 'clamp(24px, 2.8vw, 36px)', marginBottom: '20px', lineHeight: '1.1' }}>
           Have an idea? <i style={{ color: 'var(--c-gold)' }}>Let's build it.</i>
         </h2>
         <p style={{ fontSize: '16px', lineHeight: '1.65', color: 'var(--c-warm)', marginBottom: '40px', opacity: '0.8' }}>
