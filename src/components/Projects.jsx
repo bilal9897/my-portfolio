@@ -10,6 +10,7 @@ const projects = [
     live: true,
     visitUrl: '#',
     sourceUrl: 'https://github.com/bilal9897',
+    image: '/Assets/img/projects/biodiversity.png'
   },
   {
     id: '02',
@@ -20,6 +21,7 @@ const projects = [
     live: true,
     visitUrl: '#',
     sourceUrl: 'https://github.com/bilal9897',
+    image: '/Assets/img/projects/cuecafe.png'
   },
   {
     id: '03',
@@ -30,6 +32,7 @@ const projects = [
     live: true,
     visitUrl: '#',
     sourceUrl: 'https://github.com/bilal9897',
+    image: '/Assets/img/projects/uae.png'
   },
   {
     id: '04',
@@ -40,6 +43,7 @@ const projects = [
     live: true,
     visitUrl: '#',
     sourceUrl: 'https://github.com/bilal9897',
+    image: '/Assets/img/projects/salon.png'
   }
 ];
 
@@ -108,22 +112,23 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Image Placeholder */}
+              {/* Project Image */}
               <div style={{
                 flex: '1 1 340px',
                 aspectRatio: '16/9',
                 borderRadius: '16px',
+                overflow: 'hidden',
                 background: 'linear-gradient(135deg, rgba(212,165,116,0.06) 0%, rgba(0,0,0,0.4) 100%)',
                 border: '1px solid rgba(255,255,255,0.05)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'rgba(255,255,255,0.12)',
-                fontSize: '11px',
-                letterSpacing: '0.1em',
-                fontFamily: 'var(--font-mono)',
               }}>
-                PROJECT SCREENSHOT
+                {proj.image ? (
+                  <img src={proj.image} alt={`${proj.title} screenshot`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                ) : (
+                  <span style={{ color: 'rgba(255,255,255,0.12)', fontSize: '11px', letterSpacing: '0.1em', fontFamily: 'var(--font-mono)' }}>PROJECT SCREENSHOT</span>
+                )}
               </div>
 
             </article>
