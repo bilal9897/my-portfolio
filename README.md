@@ -2,7 +2,7 @@
 
 Personal portfolio website for Bilal, a freelance Full-Stack Developer and Software Engineer building practical software and AI-powered solutions for real businesses. 
 
-🌐 **Live Website:** [bilal.in](https://bilal.in/)
+🌐 **Live Website:** [bilalsalmani.in](https://bilalsalmani.in/)
 
 ## Features
 - **Premium UI/UX:** Dark mode, smooth reveal animations, and a modern aesthetic.
