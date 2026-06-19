@@ -69,10 +69,12 @@ export default function Hero() {
             <span className="first">Bilal.</span>
           </h1>
 
-          <p className="hero-deck reveal">
-            I'm a <span className="typed" id="typedText">Software Developer</span> &mdash;
-            building practical software and AI-powered solutions for real businesses.
-          </p>
+          <div className="hero-deck-wrap">
+            <p className="hero-deck reveal">
+              I'm a <span className="typed" id="typedText">Software Developer</span> &mdash;
+              building practical software and AI-powered solutions for real businesses.
+            </p>
+          </div>
 
           <p className="hero-description reveal">
             <span className="desktop-text">
