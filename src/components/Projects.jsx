@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const projects = [
   {
@@ -30,7 +30,7 @@ const projects = [
     desc: 'A professional website developed for a UAE-based client with a focus on performance, responsiveness, and modern design.',
     stack: ['React', 'JavaScript', 'UI/UX'],
     live: true,
-    visitUrl: '#',
+    visitUrl: 'https://analystuae.com/',
     sourceUrl: 'https://github.com/bilal9897',
     image: '/Assets/img/projects/uae.png'
   },
@@ -48,6 +48,8 @@ const projects = [
 ];
 
 export default function Projects() {
+  const [flippedId, setFlippedId] = useState(null);
+
   return (
     <section id="projects" className="section-track">
       <div className="eyebrow reveal" style={{ marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '12px', fontSize: '11px', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--c-gold)' }}>
@@ -58,7 +60,8 @@ export default function Projects() {
         Things I've <i style={{ color: 'var(--c-gold)' }}>shipped.</i>
       </h2>
 
-      <div className="projects-list" style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
+      {/* ── Desktop layout ── */}
+      <div className="projects-desktop">
         {projects.map((proj, index) => {
           const isEven = index % 2 === 0;
           return (
@@ -70,70 +73,94 @@ export default function Projects() {
               flexDirection: isEven ? 'row' : 'row-reverse',
               borderBottom: '1px solid rgba(255,255,255,0.04)',
               paddingBottom: '48px',
+              marginBottom: '48px',
             }}>
-
               {/* Text Side */}
-              <div className="project__body" style={{ flex: '1 1 340px' }}>
+              <div style={{ flex: '1 1 340px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                  <span style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--c-gold)', fontWeight: '600' }}>
-                    PROJECT · {proj.id}
-                  </span>
+                  <span style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--c-gold)', fontWeight: '600' }}>PROJECT · {proj.id}</span>
                   <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.06)' }}></div>
-                  {proj.live && (
-                    <span style={{ padding: '3px 10px', border: '1px solid rgba(212,165,116,0.35)', borderRadius: '20px', fontSize: '9px', letterSpacing: '0.1em', color: 'var(--c-gold)' }}>LIVE</span>
-                  )}
+                  {proj.live && <span style={{ padding: '3px 10px', border: '1px solid rgba(212,165,116,0.35)', borderRadius: '20px', fontSize: '9px', letterSpacing: '0.1em', color: 'var(--c-gold)' }}>LIVE</span>}
                 </div>
-
                 <h3 style={{ fontSize: 'clamp(22px, 3vw, 32px)', marginBottom: '10px', lineHeight: '1.15', fontFamily: 'var(--font-serif)', fontWeight: 400 }}>
                   {proj.title} <i style={{ color: 'var(--c-gold)' }}>{proj.italicText}</i>
                 </h3>
-
-                <p style={{ fontSize: '14px', lineHeight: '1.65', color: 'var(--c-warm)', marginBottom: '18px', opacity: '0.8', maxWidth: '440px' }}>
-                  {proj.desc}
-                </p>
-
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '22px' }}>
+                <p style={{ fontSize: '14px', lineHeight: '1.65', color: 'var(--c-warm)', marginBottom: '18px', opacity: '0.8', maxWidth: '440px' }}>{proj.desc}</p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 22px 0', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   {proj.stack.map((tech, i) => (
-                    <span key={i} style={{ padding: '4px 12px', background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '6px', fontSize: '11px', color: 'rgba(232,238,247,0.65)' }}>
+                    <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'rgba(232,238,247,0.9)' }}>
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--c-gold)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                       {tech}
-                    </span>
+                    </li>
                   ))}
-                </div>
-
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  <a href={proj.visitUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '9px 20px', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', textDecoration: 'none', fontSize: '11px', letterSpacing: '0.08em', fontWeight: '600', transition: 'all 0.2s' }}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                    VISIT
-                  </a>
-                  <a href={proj.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '9px 20px', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', textDecoration: 'none', fontSize: '11px', letterSpacing: '0.08em', fontWeight: '600', transition: 'all 0.2s' }}>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                    SOURCE
-                  </a>
+                </ul>
+                <div style={{ display: 'flex', gap: '20px' }}>
+                  <a href={proj.visitUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--c-gold)', textDecoration: 'none', fontSize: '13px', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}>Visit Project →</a>
+                  {proj.sourceUrl !== '#' && <a href={proj.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--c-gold)', textDecoration: 'none', fontSize: '13px', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '6px' }}>Source →</a>}
                 </div>
               </div>
-
-              {/* Project Image */}
-              <div style={{
-                flex: '1 1 340px',
-                aspectRatio: '16/9',
-                borderRadius: '16px',
-                overflow: 'hidden',
-                background: 'linear-gradient(135deg, rgba(212,165,116,0.06) 0%, rgba(0,0,0,0.4) 100%)',
-                border: '1px solid rgba(255,255,255,0.05)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
-                {proj.image ? (
-                  <img src={proj.image} alt={`${proj.title} screenshot`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                ) : (
-                  <span style={{ color: 'rgba(255,255,255,0.12)', fontSize: '11px', letterSpacing: '0.1em', fontFamily: 'var(--font-mono)' }}>PROJECT SCREENSHOT</span>
-                )}
+              {/* Image Side */}
+              <div style={{ flex: '1 1 340px', aspectRatio: '16/9', borderRadius: '16px', overflow: 'hidden', background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(255,255,255,0.05)' }}>
+                {proj.image && <img src={proj.image} alt={proj.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />}
               </div>
-
             </article>
           );
         })}
+      </div>
+
+      {/* ── Mobile carousel ── */}
+      <div className="projects-mobile">
+        {projects.map((proj) => (
+          <div
+            key={proj.id}
+            className={`proj-card ${flippedId === proj.id ? 'is-flipped' : ''}`}
+            onClick={() => setFlippedId(flippedId === proj.id ? null : proj.id)}
+          >
+            <div className="proj-card__inner">
+              {/* Front */}
+              <div className="proj-card__front">
+                {proj.image && <img src={proj.image} alt={proj.title} className="proj-card__img" />}
+                <div className="proj-card__front-overlay">
+                  <h3 className="proj-card__front-title">{proj.title} <i>{proj.italicText}</i></h3>
+                  <span className="proj-card__front-cta">TAP TO EXPLORE →</span>
+                </div>
+                {/* Glassy bottom bar with buttons */}
+                <div className="proj-card__bottom-bar" onClick={(e) => e.stopPropagation()}>
+                  <a href={proj.visitUrl} target="_blank" rel="noopener noreferrer" className="proj-card__bar-btn">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Visit
+                  </a>
+                  <div className="proj-card__bar-divider"></div>
+                  <a href={proj.sourceUrl} target="_blank" rel="noopener noreferrer" className="proj-card__bar-btn">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    Source
+                  </a>
+                </div>
+              </div>
+              {/* Back */}
+              <div className="proj-card__back">
+                {proj.image && <div className="proj-card__back-bg" style={{ backgroundImage: `url(${proj.image})` }}></div>}
+                <button className="proj-card__close" onClick={(e) => { e.stopPropagation(); setFlippedId(null); }}>✕</button>
+                <div className="proj-card__back-content">
+                  <h3 className="proj-card__back-title">{proj.title} <i style={{ color: 'var(--c-gold)' }}>{proj.italicText}</i></h3>
+                  <p className="proj-card__back-desc">{proj.desc}</p>
+                  <ul className="proj-card__stack">
+                    {proj.stack.map((tech, i) => (
+                      <li key={i}>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--c-gold)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="proj-card__back-links">
+                    <a href={proj.visitUrl} target="_blank" rel="noopener noreferrer">Visit Project →</a>
+                    {proj.sourceUrl !== '#' && <a href={proj.sourceUrl} target="_blank" rel="noopener noreferrer">Source →</a>}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
