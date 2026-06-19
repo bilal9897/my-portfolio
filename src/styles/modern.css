@@ -349,7 +349,7 @@ section {
 @media (max-width: 768px) {
   #hero {
     min-height: auto !important;
-    padding-top: 50px !important;
+    padding-top: 35px !important;
     padding-bottom: 20px !important;
     align-content: start;
   }
@@ -1549,7 +1549,7 @@ section {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 16px 24px;
-    padding: 110px 6% 60px;
+    padding: 30px 6% 60px;
     align-items: start;
     min-height: auto;
   }
