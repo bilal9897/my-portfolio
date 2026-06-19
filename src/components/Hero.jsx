@@ -56,6 +56,7 @@ export default function Hero() {
         </div>
 
         <div className="hero-content">
+          {/* Desktop hero-meta */}
           <div className="hero-meta reveal">
             <span className="dot"></span>
             <span>Software Developer</span>
@@ -63,6 +64,24 @@ export default function Hero() {
             <span>Full-Stack Developer</span>
             <span className="sep">·</span>
             <span className="gold">Available for Freelance Work</span>
+          </div>
+
+          {/* Mobile-only continuous ticker */}
+          <div className="hero-meta-ticker" aria-hidden="true">
+            <div className="hero-meta-ticker__track">
+              {/* Duplicated twice for seamless infinite loop */}
+              {[0, 1].map((n) => (
+                <span key={n} className="hero-meta-ticker__set">
+                  <span className="dot"></span>
+                  <span>Software Developer</span>
+                  <span className="sep">·</span>
+                  <span>Full-Stack Developer</span>
+                  <span className="sep">·</span>
+                  <span className="gold">Available for Freelance Work</span>
+                  <span style={{ display: 'inline-block', width: '40px' }}></span>
+                </span>
+              ))}
+            </div>
           </div>
 
           <h1 className="hero-title reveal">

@@ -402,6 +402,9 @@ section {
 .hero-meta .sep { color: var(--c-faint); }
 .hero-meta .gold { color: var(--c-gold); }
 
+/* Mobile ticker — hidden on desktop */
+.hero-meta-ticker { display: none; }
+
 .hero-title {
   font-family: var(--font-serif);
   font-size: clamp(56px, 9vw, 124px);
@@ -1551,13 +1554,49 @@ section {
   }
 
   .hero-meta {
+    display: none; /* replaced by ticker on mobile */
+  }
+
+  /* Continuous scroll ticker */
+  .hero-meta-ticker {
+    display: block;
     grid-column: 1 / -1;
-    flex-wrap: nowrap;
-    gap: 4px 8px;
-    margin-bottom: 8px;
-    font-size: 8px;
     overflow: hidden;
     white-space: nowrap;
+    margin-bottom: 8px;
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+  .hero-meta-ticker__track {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    animation: ticker-scroll 14s linear infinite;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(232,238,247,0.55);
+  }
+  .hero-meta-ticker__set {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-meta-ticker__set .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--c-gold);
+    opacity: 0.8;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .hero-meta-ticker__set .sep { color: var(--c-faint); }
+  .hero-meta-ticker__set .gold { color: var(--c-gold); }
+
+  @keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
   
   .hero-title { 
