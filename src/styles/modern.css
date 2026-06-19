@@ -706,6 +706,13 @@ section {
   to { transform: translateX(-50%); }
 }
 
+@media (max-width: 768px) {
+  .marquee { padding: 12px 0; }
+  .marquee__item { font-size: 16px; gap: 40px; }
+  .marquee__track { gap: 40px; }
+  .marquee__item .star { font-size: 11px; }
+}
+
 /* =====================================================================
    ABOUT — Editorial spread
    ===================================================================== */
