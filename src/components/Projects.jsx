@@ -32,7 +32,8 @@ const projects = [
     live: true,
     visitUrl: 'https://analystuae.com/',
     sourceUrl: 'https://github.com/bilal9897',
-    image: '/Assets/img/projects/uae.png'
+    image: '/Assets/img/projects/uae.png',
+    mobileImage: '/Assets/img/projects/mobile-uae.png'
   },
   {
     id: '04',
@@ -125,7 +126,7 @@ export default function Projects() {
             <div className="proj-card__inner">
               {/* Front */}
               <div className="proj-card__front">
-                {proj.image && <img src={proj.image} alt={proj.title} className="proj-card__img" />}
+                {(proj.mobileImage || proj.image) && <img src={proj.mobileImage || proj.image} alt={proj.title} className="proj-card__img" />}
                 <div className="proj-card__front-overlay">
                   <h3 className="proj-card__front-title">{proj.title} <i>{proj.italicText}</i></h3>
                   <span className="proj-card__front-cta">TAP TO EXPLORE →</span>
@@ -145,7 +146,7 @@ export default function Projects() {
               </div>
               {/* Back */}
               <div className="proj-card__back">
-                {proj.image && <div className="proj-card__back-bg" style={{ backgroundImage: `url(${proj.image})` }}></div>}
+                {(proj.mobileImage || proj.image) && <div className="proj-card__back-bg" style={{ backgroundImage: `url(${proj.mobileImage || proj.image})` }}></div>}
                 <button className="proj-card__close" onClick={(e) => { e.stopPropagation(); setFlippedId(null); }}>✕</button>
                 <div className="proj-card__back-content">
                   <h3 className="proj-card__back-title">{proj.title} <i style={{ color: 'var(--c-gold)' }}>{proj.italicText}</i></h3>
