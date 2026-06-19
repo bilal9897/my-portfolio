@@ -1606,11 +1606,9 @@ section {
   }
   
   .hero-deck {
-    grid-column: 1;
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 0;
-    min-height: 135px; /* Prevent layout shift during typing animation */
   }
   
   .hero-portrait {
@@ -1681,14 +1679,9 @@ section {
 
   /* Fix height so typing animation never causes layout shift */
   .hero-deck-wrap {
-    /* 
-      Longest role = "Full-Stack Developer" wraps the full sentence
-      to ~7 lines on mobile. Setting a fixed min-height prevents
-      everything below (description, buttons, signature) from moving.
-    */
-    min-height: 8em;
-    display: flex;
-    align-items: flex-start;
+    grid-column: 1;
+    height: 195px; /* Fixed explicitly (7 lines * 18px * 1.5 = 189px) to prevent all shifts */
+    display: block;
   }
   .hero-deck {
     margin: 0;
