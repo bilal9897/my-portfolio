@@ -11,9 +11,21 @@ const navLinks = [
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30);
+    let lastScrollY = window.scrollY;
+    const onScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 30);
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      lastScrollY = currentScrollY;
+    };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -27,7 +39,7 @@ export default function MobileNav() {
         position: 'fixed',
         top: '14px',
         left: '50%',
-        transform: 'translateX(-50%)',
+        transform: isVisible ? 'translate(-50%, 0)' : 'translate(-50%, -150px)',
         zIndex: 1000,
         width: 'calc(100% - 32px)',
         maxWidth: '420px',
@@ -43,7 +55,7 @@ export default function MobileNav() {
         borderRadius: '999px',
         border: '1px solid rgba(212, 165, 116, 0.15)',
         boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
-        transition: 'background 0.35s ease, box-shadow 0.35s ease',
+        transition: 'background 0.35s ease, box-shadow 0.35s ease, transform 0.4s ease',
       }}>
 
         {/* Brand */}

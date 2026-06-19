@@ -346,6 +346,15 @@ section {
   #hero { grid-template-columns: 1fr; gap: 50px; padding-top: 60px; }
 }
 
+@media (max-width: 768px) {
+  #hero {
+    min-height: auto !important;
+    padding-top: 50px !important;
+    padding-bottom: 20px !important;
+    align-content: start;
+  }
+}
+
 .hero-canvas-wrap {
   position: absolute;
   inset: 0;
@@ -441,6 +450,17 @@ section {
   line-height: 1.75;
   margin-bottom: 40px;
   max-width: 500px;
+}
+.mobile-text {
+  display: none;
+}
+@media (max-width: 768px) {
+  .desktop-text {
+    display: none;
+  }
+  .mobile-text {
+    display: inline;
+  }
 }
 
 .hero-cta {
@@ -1409,7 +1429,7 @@ section {
     align-items: start;
     min-height: auto;
   }
-  .hero-canvas-wrap, .hero-stamp, .hero-signature { display: none; }
+  .hero-canvas-wrap, .hero-stamp { display: none; }
   
   /* Flatten hero-content so its children join the #hero grid */
   .hero-content {
@@ -1501,6 +1521,28 @@ section {
     justify-content: center;
     padding: 14px;
     font-size: 13px;
+  }
+  .hero-signature {
+    grid-column: 1 / -1;
+    margin-top: 24px;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .hero-signature .hero-sig-num {
+    font-size: clamp(16px, 4vw, 22px);
+  }
+  .hero-signature .hero-sig-num .small {
+    display: block;
+    font-size: 11px;
+    margin-top: 2px;
+    line-height: 1.1;
+  }
+  .hero-signature .hero-sig-item:nth-child(2) .hero-sig-num .small {
+    display: inline; /* Keep the + inline */
+  }
+  .hero-signature .hero-sig-label {
+    font-size: 9px;
   }
 }
 

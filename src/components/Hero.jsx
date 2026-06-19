@@ -75,7 +75,12 @@ export default function Hero() {
           </p>
 
           <p className="hero-description reveal">
-            I completed my Bachelor of Computer Applications (BCA) and currently work as a freelance developer. I enjoy turning ideas into useful products and building software that solves real-world problems. My focus is on creating applications that are simple, reliable, and easy to use.
+            <span className="desktop-text">
+              I’m a Software Engineer who enjoys turning ideas into digital products. I build websites, mobile applications, and AI-powered solutions that solve real-world problems, focusing on simplicity, reliability, and great user experiences.
+            </span>
+            <span className="mobile-text">
+              I’m a software developer who enjoys turning ideas into useful products and building solutions that solve real-world problems
+            </span>
           </p>
 
           <div className="hero-cta reveal">
