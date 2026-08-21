@@ -11,7 +11,7 @@ const projects = [
     visitUrl: '/biodiversity-demo',
     visitText: 'Live Demo',
     sourceUrl: '#',
-    image: '/Assets/img/projects/biodiversity.png'
+    image: '/Assets/img/projects/biodiversity/p4.png'
   },
   {
     id: '02',
