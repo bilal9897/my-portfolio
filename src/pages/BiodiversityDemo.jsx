@@ -8,11 +8,11 @@ export default function BiodiversityDemo() {
   }, []);
 
   const images = [
-    '/Assets/img/projects/biodiversity/p1.png',
-    '/Assets/img/projects/biodiversity/p2.png',
-    '/Assets/img/projects/biodiversity/p3.png',
-    '/Assets/img/projects/biodiversity/p4.png',
-    '/Assets/img/projects/biodiversity/p5.png',
+    '/Assets/img/projects/biodiversity/p1.webp',
+    '/Assets/img/projects/biodiversity/p2.webp',
+    '/Assets/img/projects/biodiversity/p3.webp',
+    '/Assets/img/projects/biodiversity/p4.webp',
+    '/Assets/img/projects/biodiversity/p5.webp',
   ];
 
   return (

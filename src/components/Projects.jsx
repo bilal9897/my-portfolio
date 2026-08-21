@@ -11,7 +11,7 @@ const projects = [
     visitUrl: '/biodiversity-demo',
     visitText: 'Live Demo',
     sourceUrl: '#',
-    image: '/Assets/img/projects/biodiversity/p4.png'
+    image: '/Assets/img/projects/biodiversity/p4.webp'
   },
   {
     id: '02',
@@ -22,7 +22,7 @@ const projects = [
     live: true,
     visitUrl: '#',
     sourceUrl: 'https://github.com/bilal9897',
-    image: '/Assets/img/projects/cuecafe.png'
+    image: '/Assets/img/projects/cuecafe.webp'
   },
   {
     id: '03',
