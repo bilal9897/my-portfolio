@@ -1732,7 +1732,7 @@ section {
   .projects-mobile::-webkit-scrollbar { display: none; }
 
   .proj-card {
-    flex: 0 0 85vw;
+    flex: 0 0 92vw;
     height: 320px;
     scroll-snap-align: center;
     perspective: 1000px;
