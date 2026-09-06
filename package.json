@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && node -e \"require('fs').copyFileSync('dist/index.html', 'dist/200.html')\"",
+    "build": "tsc && vite build && node -e \"require('fs').copyFileSync('dist/index.html', 'dist/200.html'); try { require('fs').unlinkSync('dist/_redirects') } catch(e) {}\"",
     "preview": "vite preview"
   },
   "devDependencies": {
