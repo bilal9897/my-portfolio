@@ -18,7 +18,7 @@ const projects = [
     title: 'VANGUARD',
     italicText: 'Store',
     desc: 'A premium online watch store showcasing modern and luxury timepieces.',
-    stack: ['React', 'JavaScript', 'TailwindCSS'],
+    stack: ['Next.js', 'React 19', 'TypeScript', 'Tailwind', 'GSAP'],
     live: true,
     visitUrl: 'https://watch-online-store.netlify.app/',
     sourceUrl: 'https://github.com/bilal9897/watch-website.git',
