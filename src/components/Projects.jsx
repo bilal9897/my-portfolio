@@ -15,6 +15,17 @@ const projects = [
   },
   {
     id: '02',
+    title: 'VANGUARD',
+    italicText: 'Store',
+    desc: 'A premium online watch store showcasing modern and luxury timepieces.',
+    stack: ['React', 'JavaScript', 'TailwindCSS'],
+    live: true,
+    visitUrl: 'https://watch-online-store.netlify.app/',
+    sourceUrl: 'https://github.com/bilal9897/watch-website.git',
+    image: '/Assets/img/projects/VANGUARD.png'
+  },
+  {
+    id: '03',
     title: 'CueCafe',
     italicText: 'Pro',
     desc: 'Offline Cafe & Pool Hall Management Software with billing, session tracking, reports, customer records, and offline functionality.',
@@ -25,7 +36,7 @@ const projects = [
     image: '/Assets/img/projects/cuecafe.webp'
   },
   {
-    id: '03',
+    id: '04',
     title: 'UAE Business',
     italicText: 'Website',
     desc: 'A professional website developed for a UAE-based client with a focus on performance, responsiveness, and modern design.',
@@ -35,17 +46,6 @@ const projects = [
     sourceUrl: 'https://github.com/bilal9897',
     image: '/Assets/img/projects/uae.png',
     mobileImage: '/Assets/img/projects/mobile-uae.png'
-  },
-  {
-    id: '04',
-    title: 'Salon Hisab',
-    italicText: 'Kitab',
-    desc: 'A business management system for salons to manage workers, expenses, income, and reports.',
-    stack: ['React', 'Flask', 'OCR', 'SQLite'],
-    live: true,
-    visitUrl: '#',
-    sourceUrl: 'https://github.com/bilal9897',
-    image: '/Assets/img/projects/salon.png'
   }
 ];
 

@@ -44,7 +44,7 @@ export default function initSkillViz() {
       '.skill-orb__name{margin-top:10px;font-size:13px;font-weight:600;letter-spacing:.04em;color:#e8eef7;text-transform:uppercase;text-align:center}',
       '.skill-orb__pct{margin-top:2px;font-size:12px;font-weight:500;color:rgba(232,238,247,.7);font-variant-numeric:tabular-nums;letter-spacing:.05em}',
       '.skill-orb:hover,.skill-orb.skill-orb--hover{border-color:rgba(212,165,116,.4);box-shadow:0 8px 30px rgba(212,165,116,.18),0 0 0 1px rgba(232,185,136,.12) inset}',
-      '@media(max-width:600px){.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.skill-orb{width:100%;min-height:170px;margin:0;padding:10px}.skill-orb__ringwrap{width:90px;height:90px}.skill-orb__icon{width:40px;height:40px}.skill-orb__name{font-size:11px}.skill-orb__pct{font-size:11px}}',
+      '@media(max-width:600px){.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.skill-orb{width:100%;min-height:110px;margin:0;padding:6px;border-radius:10px}.skill-orb__ringwrap{width:54px;height:54px}.skill-orb__icon{width:24px;height:24px}.skill-orb__name{font-size:8px;margin-top:6px;letter-spacing:0;word-break:break-word}.skill-orb__pct{font-size:9px}}',
       '@media (prefers-reduced-motion: reduce){.skill-orb,.skill-orb.skill-orb--in-view{animation:none;opacity:1}.skill-orb__icon{transition:none}}'
     ].join('');
     var style = document.createElement('style');
