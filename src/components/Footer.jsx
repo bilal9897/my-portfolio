@@ -102,6 +102,8 @@ export default function Footer() {
                 href={s.href}
                 title={s.label}
                 aria-label={s.label}
+                target={s.href.startsWith('mailto') ? undefined : "_blank"}
+                rel={s.href.startsWith('mailto') ? undefined : "noopener noreferrer me"}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -121,6 +123,20 @@ export default function Footer() {
                 <span>{s.label}</span>
               </a>
             ))}
+          </div>
+
+          {/* SEO Text Links */}
+          <div className="official-profiles" style={{ marginTop: '32px', fontSize: '13px', opacity: 0.65, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Official Profiles</span>
+            <a href="https://instagram.com/bilalsalmani.in" target="_blank" rel="noopener noreferrer me" style={{ color: 'var(--c-warm)', textDecoration: 'none' }} onMouseEnter={e => e.currentTarget.style.textDecoration='underline'} onMouseLeave={e => e.currentTarget.style.textDecoration='none'}>
+              Instagram (@bilalsalmani.in)
+            </a>
+            <a href="https://github.com/bilal9897" target="_blank" rel="noopener noreferrer me" style={{ color: 'var(--c-warm)', textDecoration: 'none' }} onMouseEnter={e => e.currentTarget.style.textDecoration='underline'} onMouseLeave={e => e.currentTarget.style.textDecoration='none'}>
+              GitHub (Bilal9897)
+            </a>
+            <a href="https://www.linkedin.com/in/bilal-salmani-6190ab292/" target="_blank" rel="noopener noreferrer me" style={{ color: 'var(--c-warm)', textDecoration: 'none' }} onMouseEnter={e => e.currentTarget.style.textDecoration='underline'} onMouseLeave={e => e.currentTarget.style.textDecoration='none'}>
+              LinkedIn (Bilal Salmani)
+            </a>
           </div>
         </div>
 
