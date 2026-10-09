@@ -9,16 +9,16 @@ export default function About() {
       <div className="about-grid">
         <div className="about-body reveal">
           <p className="about-lede">
-            I am a software developer with a passion for creating useful digital products. After completing my BCA, I started working as a freelance developer and helping businesses turn ideas into real applications.
+            I am Bilal Salmani, a <strong>Full Stack Developer</strong> and <strong>React Developer</strong> with a passion for creating high-performing, elegant digital products. I specialize in designing <strong>Luxury Websites</strong> with modern UI/UX and smooth <strong>GSAP Animations</strong>.
           </p>
           <p>
-            I completed my internship at Innovation Hub, Pilikula Science Centre, where I worked on a government-supported project called the Biodiversity Explorer System. The system was successfully deployed and is being used at the science centre.
+            Beyond traditional web development, I integrate <strong>AI Automation</strong> and cutting-edge technologies to build smart, scalable solutions. Whether developing complex AI-powered business tools or crafting immersive web experiences, I prioritize <strong>Performance Optimization</strong> to ensure every application is lightning fast and accessible.
           </p>
           <p>
-            I have also built websites for international clients, including a UAE-based company, and developed business software for local businesses. I enjoy learning new technologies and finding simple solutions to complex problems.
+            I completed my internship at Innovation Hub, Pilikula Science Centre, where I worked on a government-supported project called the Biodiversity Explorer System. I have also built websites for international clients, including a UAE-based company, and developed business software for local businesses.
           </p>
           <p>
-            I believe good software should not only work well but should also provide a smooth and enjoyable experience for users.
+            I believe good software should not only look stunning but should also provide a seamless, optimized, and intuitive experience for users.
           </p>
         </div>
 

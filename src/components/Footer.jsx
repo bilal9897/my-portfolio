@@ -23,7 +23,7 @@ export default function Footer() {
     },
     {
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/bilal-6190ab292',
+      href: 'https://www.linkedin.com/in/bilal-salmani-6190ab292/',
       icon: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -34,7 +34,7 @@ export default function Footer() {
     },
     {
       label: 'Instagram',
-      href: 'https://www.instagram.com/bilalsalmani.in?stkn=MW8wOW9qeHBzcnJnZg==',
+      href: 'https://instagram.com/bilalsalmani.in',
       icon: (
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -95,27 +95,30 @@ export default function Footer() {
             Open for freelance, collaboration, and exciting opportunities.
           </p>
           {/* Social Icons */}
-          <div style={{ display: 'flex', gap: '12px' }}>
+          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
             {socialLinks.map((s) => (
               <a
                 key={s.label}
                 href={s.href}
                 title={s.label}
+                aria-label={s.label}
                 style={{
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '50%',
-                  border: '1px solid rgba(212, 165, 116, 0.2)',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
+                  gap: '8px',
+                  padding: '8px 16px',
+                  borderRadius: '999px',
+                  border: '1px solid rgba(212, 165, 116, 0.2)',
                   color: 'var(--c-mute)',
+                  textDecoration: 'none',
+                  fontSize: '14px',
                   transition: 'all 0.25s',
                 }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--c-gold)'; e.currentTarget.style.color = 'var(--c-gold)'; e.currentTarget.style.background = 'rgba(212,165,116,0.08)'; }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(212,165,116,0.2)'; e.currentTarget.style.color = 'var(--c-mute)'; e.currentTarget.style.background = 'transparent'; }}
               >
                 {s.icon}
+                <span>{s.label}</span>
               </a>
             ))}
           </div>
